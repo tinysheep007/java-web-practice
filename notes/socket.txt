@@ -1,0 +1,2 @@
+socket can help to communicate between two computers.
+To start using socket, we need a data sender, and data receiver.

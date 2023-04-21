@@ -1,0 +1,19 @@
+On the same internet, different device would be assigned different
+IP address. We can access other device through IP address. However,
+if  my phoine is on data and computer on wifi, my phone cannot
+reach the computer because they are on different wifi.
+
+To each individual apps on the computer and connect them to internet,
+they mustt have their own port number and can be accessed and visited
+through IP:port number format. Port number can only be from 0 to
+65535.
+
+IP address has 2 types. IPv4 which has 32 bits and IPv6 which has 128 bits.
+
+
+TCP: more secured. We need hand shake 3 times. Connection must be established in order to
+pass files in between devices.
+
+UDP: faster and better performeed. No connection needed. Can transfer
+data at any time. However, parts of data might be lost during the
+transition.

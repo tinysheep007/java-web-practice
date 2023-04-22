@@ -1,0 +1,21 @@
+1NF(weakest)： all the data cannot be splited anymore
+Ex: student(id, into) -> student(id, phone, address)
+last one it's in 1NF：
+
+2NF: there must be a primary key so that other keys 
+can be associate with it.
+Ex: student(primary key(id), phone, address)
+
+3NF: 
+satisfying 2NF while other proerpty don't rely on its main id
+Ex: borrowBooks(borrowID, studentID, bookID)
+we can simply into 2 tables cuz of bookName and bookAuthor
+borrowBooks(borrowID, studentID, bookID, bookName, bookAuthor)
+book(bookID, bookName, bookAuthor)
+
+BCNF(strongest):
+NEED MORE STUDY ON THIS
+Boyce - Codd normal form (or BCNF or 3.5NF) 
+A relation is in BCNF if, X is superkey for every functional dependency (FD) X?Y in given relation. 
+
+

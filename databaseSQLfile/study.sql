@@ -5,5 +5,9 @@ create table teacher(Tid  int not null, Name varchar(30), Gender varchar(10), pr
 create table teach(ID int not null, Tid int not null, primary key(ID, Tid));
 show tables;
 insert into student values (102851, "Beater Pan", "M");
+insert into student values (1, "Jin", "M");
+insert into student values (2, "Jasper", "M");
 ALTER TABLE student RENAME COLUMN ID TO Sid;
+insert into teacher values ();
 select * from student;
+select * from teacher;

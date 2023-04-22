@@ -1,0 +1,75 @@
+in order to use chinese in our database, we must be using
+UTF8 when creating the database.
+
+data types:
+- char(n): fixed length string of size n but if not fully filled, 
+fill with empty space
+-varchar(n): not fixed length, don't use empty space to fill
+
+6 types of restrcitions:
+1.primary key
+2.foreign key
+3.unique
+4.check
+5.default
+6.not null / null
+
+when dropping columns:
+if we do 
+ALTER TABLE student DROP COLUMN name restric t
+
+It means that any othe table that reference to the deleted name col,
+will not be deleted
+However if we do DROP COLUMN name CASCADE,
+any other table that reference that name will be deleted as well.
+
+Inner join -  gives everything in common between tables
+left join - gives everything in common between tables plus
+all the info on the left table and the corresponding right hand info
+from right table would be all null
+
+we can create user and grant or revoke their status to access or operate on databases
+
+we can use CREATE VIEW to save our query results
+and we can use it as a regular table later.
+
+we can create index(similar to hashmap) to speed up the process of search
+CREATE INDEX name ON table name(col name)
+
+we can use Trigger to auto perform assigned opertaions BEFORE or AFTER 
+it is trigger by the operationst such as INSERT UPDATE or deleted
+INSERT - new stuff will be inserted to new ; 
+DELETE - old stuff will be in old. We can get the data that will be deleted
+in the old table.
+UPDATE - old stuff will be in old. New stuff in new table
+for exmaple
+CREATE TRIGGER t BEFORE DELETE ON student FOR EACH ROW DELETE FROM 
+teach where old.sid = teach.sid
+we have tables student to store info of all student. And table
+teach to store studentID and teacherID. Every time when we try to delete
+anything from student, the trigger t will be performed BEFORE.
+It will frist remove all rows in teach that has same studentID
+from the student we want to DELETE. 
+
+Innodb is a engine that allows us to perform operations 
+such as save a state of the database and we can return back
+to the previous point
+
+To start a reversable work (; is not optional)
+begin;
+...blah blah ur commands
+at this point the database will not acutally update in the real mySQL 
+now we have to do the below to finalize the change
+commit;
+
+Other useful commands:
+To return back to the last check point
+rollback; 
+
+save current state of database:
+savepoint (name of the saving point)
+
+return back to a spiecifc saving point:
+rollback to (saving point name)
+
+Note that after commit, we cannot do roll back.

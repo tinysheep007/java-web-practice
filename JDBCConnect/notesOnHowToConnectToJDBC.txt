@@ -1,0 +1,27 @@
+We use driver Manager to connect with mySQL
+the URL we use is 
+jdbc:mysql://localhost:3306/study
+"study" is the database name
+
+If we are using mysql-connector.jar has version lower than 8.0
+we also need to add this line before our try catch
+//load in the driver manually
+Class.forName("com.mysql.cj.jdbc.Driver");
+
+We must add our mysql-connector-java.jar file into our
+reference libaray.
+
+The location of the connection is usually under the installtion 
+directory of mysql. Connector must be installed along with mySQL
+
+The most often location is 
+C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.28.jar
+
+Useful website:
+How to Install and Configure JDBC with MySQL also Create Database in VS Code |Ada Code|
+https://www.youtube.com/watch?v=ZhljL_0gm04
+https://stackoverflow.com/questions/2839321/connect-java-to-a-mysql-database/2840358#2840358
+
+None Essientail stuff:
+We can use the blow to print out the driver log
+DriverManager.setLogWriter(new PrintWriter(System.out));

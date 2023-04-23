@@ -1,0 +1,3 @@
+JDBC
+Java Data Base Connectivity
+- a JAVA API to connect with database

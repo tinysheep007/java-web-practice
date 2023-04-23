@@ -1,0 +1,20 @@
+For SELECT:
+statment.excuteQuery() would return back a ResultSet object
+because we are SELECTing something and the data we got back
+will be stored in the Result set.
+
+For DELETE, UPDATE:
+statament can also perform DQL or DML sentences. 
+statement.executeUpdate()
+iy would return back a int, representing how many lines/rows
+are affected
+
+we can also use the below to execute any SQL sentence
+statement.excute()
+It would return back a boolean, representing its a result a 
+ResultSet or a int
+We can use getResultSet() or getUpdateCount() to retrieve the info
+
+If there are multiple statement we want to do, we can do
+statement.addBatch(put ur query stuff here);
+statement.excuteBatach();

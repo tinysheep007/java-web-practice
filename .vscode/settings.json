@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/*/.jar",
+        "c:\\User\\pzxia\\softwaremeth\\junit-4.10.jar",
+        "usefulJarFiles/lombok.jar",
+        "c:\\Program Files (x86)\\MySQL\\Connector J 8.0\\mysql-connector-java-8.0.28.jar"
+    ]
+}

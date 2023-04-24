@@ -10,7 +10,7 @@ public class JDBCConnect {
                 "Zcl48484848!");
                 // create a sql object to excute our commands
                 Statement statement = connection.createStatement();) {
-            ResultSet set = statement.executeQuery("SELEECT * FROM student");
+            ResultSet set = statement.executeQuery("SELECT * FROM student");
             while (set.next()) {
                 System.out.println(set.getString(1));
             }

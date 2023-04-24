@@ -1,0 +1,5 @@
+first download the jar file from the main website
+https://projectlombok.org/download
+
+then add it to your 
+Reference libarry in vscode under JAVA Projects

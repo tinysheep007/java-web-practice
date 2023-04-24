@@ -1,0 +1,60 @@
+you can make certain instance variable into private by
+adding
+@Getter(AccessLevel.PRIVATE)
+on top of the variable
+
+We can set the entire getter private as well
+put 
+@Getter(AccessLevel.PRIVATE)
+on top of the class
+
+if variable is FINAL or STATIC, no function would create 
+even if we put comments on top
+
+@Accessors(chain = true)
+it would make all setter into chainable like
+student.setName("Bob").setGender("F);
+setter would become void
+
+@Accessors(fluent = true)
+all setter and getter name become the same 
+if the instance variable name is ID
+then getter would be 
+int ID(){}
+setter would be
+void ID(int ID){}
+
+@ToString
+gives function so we can just print it out
+@ToString(of = {things  you want})
+@ToString(exclude = {things you don't want})
+@ToString(rank = number)
+higher the rank, more pirirt when printing out in toString
+
+@EqualsAndHashCode
+
+For constructors
+@AllArgsConstructor
+
+if we use
+@AllArgsConstructor(staticName = "create")
+then our constructor will become priviate
+we will have a new static method called create that uses our private constrcutor within our class
+
+@Data gives everything include getter setter tostring equalAndHash and more
+not commandad to use inhereitance if we use @Data
+Because it can't rewrite equals properly
+
+@Value
+similar to @Data without setter, but every vairables become final
+
+@SneakyThrows
+create the needed try catch block for us
+
+@Cleanup
+it helps you close every stream automatically
+
+@Builder
+make a public static method builder()
+
+

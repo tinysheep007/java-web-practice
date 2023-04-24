@@ -11,3 +11,7 @@ ALTER TABLE student RENAME COLUMN ID TO Sid;
 insert into teacher values ();
 select * from student;
 select * from teacher;
+create table user (Userid varchar(30) not null primary key, Password varchar(50));
+insert into user values("a","a");
+insert into user values("tinysheep007","Zcl48484848!");
+select * from user;

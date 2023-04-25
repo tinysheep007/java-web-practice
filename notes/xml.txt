@@ -1,0 +1,7 @@
+XML is used for storing and transfering data
+It is similar to HTML syntax
+
+-must has one root 
+<outer>
+.... Everything you want
+</outer>

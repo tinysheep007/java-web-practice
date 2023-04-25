@@ -1,0 +1,16 @@
+First, add mybatis jar file into the reference libaray or class path
+
+Then, make  mybatis-config.xml under root directory
+
+Copy paste the sample code from mybatis webstie
+https://mybatis.org/mybatis-3/getting-started.html#building-sqlsessionfactory-from-xml
+
+remove the mappers part in the bottom
+
+replace all your properties
+
+make ur own TestMapper.xml under root directory
+change namespace, sql senetnce, resultType(package way)
+
+Add Mappers section back to mybatis-config.xml with
+Mapper using our TestMapper.xml

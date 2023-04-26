@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myBatisTest.mapper.TestMapper">
+
+  <resultMap id="changeVarName" type="student">
+    <result column="Sid" property="sid"/>
+  </resultMap>
+
+  <!-- note: change resultType to resultMap if we are using custom naming -->
+  <select id="selectStudent" resultMap="changeVarName">
+    select * from student
+  </select>
+
+  <select id="getStudentBySid" resultType="student">
+  <!-- we can also use ${var name} but ${} does not 
+  do the steps in prepare statment which means we directly
+  plug in code instead of only passing in the parsed value.
+  On the other hand, #{} is parsed value then plug in-->
+  <!-- we use var name from parameter in TestMapper.java methods -->
+    select * from student where Sid = #{sid}
+  </select>
+
+  <insert id="addStudent">
+  <!-- the var name inside #{} must match the var name inside Student class.
+  NOT THE COLUMN NAME IN MYSQL TABLE -->
+    insert into student values (#{sid}, #{Name}, #{Gender})
+  </insert>
+
+  <delete id="deleteStudentBySid">
+  <!-- we use parameter name from TestMapper.java methods in interface -->
+    delete from student where sid = #{sid}
+  </delete>
+</mapper>

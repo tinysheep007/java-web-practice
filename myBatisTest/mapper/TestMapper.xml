@@ -32,4 +32,46 @@
   <!-- we use parameter name from TestMapper.java methods in interface -->
     delete from student where sid = #{sid}
   </delete>
+
+  <!-- <select id="getTeacherByTid" resultMap="asTeacher">
+    select *, teacher.name as tname, teacher.gender as tgender from student inner join teach on student.Sid = teach.Sid 
+                                                 inner join teacher on teach.Tid = teacher.Tid where teach.Tid = #{tid}
+  </select> -->
+
+  <!-- usually primary key we use <id> instead of <result> -->
+  <!-- column is for mySQL col name or the name u changed to from your select statment -->
+  <!-- property is the variable name in your java class for that object -->
+
+
+  <!-- <resultMap id="asTeacher" type="teacher">
+    
+    <id column="Tid" property="Tid"/>
+    
+    <result column="tname" property="Name"/>
+    <result column="tgender" property="Gender"/>
+    <collection property="studentList" ofType="student">
+      <id column = "Sid" property="sid"/>
+      <result column="Name" property="Name"/>
+      <result column="Gender" property="Gender"/>
+    </collection>
+  </resultMap> -->
+
+  <resultMap id="test2" type="student">
+    <id column="sid" property="sid"/>
+    <result column="Name" property="Name"/>
+    <result column="Gender" property="Gender"/>
+    <association property="teacher" javaType="Teacher">
+      <id column="tid" property="Tid"/>
+      <result column="tname" property="Name"/>
+      <result column="tgender" property="Gender"/>
+    </association>
+  </resultMap>
+
+  <select id="selectStudentByTeacher" resultMap="test2">
+    select *, teacher.name as tname, teacher.gender as tgender from student left join teach on student.sid = teach.sid 
+                                                left join teacher on teach.tid = teacher.tid
+                                                where teach.tid = #{tid}
+  </select>
+  
+
 </mapper>

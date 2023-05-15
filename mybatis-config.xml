@@ -4,10 +4,10 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeAliases>
-  <!-- typeAliases scan the whole pacakge of classes of sql component
-  all the class name would be lower case first letter 
-  For exmaple, Student become student when we want to use the class
-  in TestMapper.xml-->
+    <!-- typeAliases scan the whole pacakge of classes of sql component
+    all the class name would be lower case first letter 
+    For exmaple, Student become student when we want to use the class
+    in TestMapper.xml-->
     <package name="myBatisTest.entity" />
   </typeAliases>
   <environments default="development">

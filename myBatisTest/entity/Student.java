@@ -7,8 +7,9 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Student {
     //in the database is Sid, so we must use resultMap inside 
-    //the TestMapper. xml
+    //the TestMapper.xml
     int sid;
     String Name;
     String Gender;
+    Teacher teacher;
 }

@@ -4,13 +4,45 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="myBatisTest.mapper.TestMapper">
 
+  <!-- this means adding second level cache which can be shared with all SQLsessions -->
+  <!-- evictions means first in fist out or other data entrance leaving method -->
+  <!-- flush is how long the cache refreshes 600000 here means 60 seconds -->
+  <!-- we also has to configure the settings in the mybatis-config.xml -->
+  <cache 
+    eviction="FIFO"
+    flushInterval="600000"
+    size="512"
+    readOnly="true"
+    />
+
   <resultMap id="changeVarName" type="student">
-    <result column="Sid" property="sid"/>
+    <id column="Sid" property="sid"/>
+    <result column="Name" property="Name"/>
+    <result column="Gender" property="Gender"/>
   </resultMap>
 
   <!-- note: change resultType to resultMap if we are using custom naming -->
-  <select id="selectStudent" resultMap="changeVarName">
+  <select id="selectStudent" resultMap="changeVarName" useCache="false">
     select * from student
+  </select>
+
+  <select id="selectStudentWithDynamicSQL" resultMap="changeVarName" flushCache="true">
+    select * from student where sid = #{sid}
+    <if test="sid == 2">
+      AND gender = "F"
+    </if>
+
+    <choose>
+      <when test = "sid == 1">
+        And name = "Jin"
+      </when>
+      <when test="sid == 4">
+        And gender = "F"
+      </when>
+      <otherwise>
+        AND sid = 102851
+      </otherwise>
+    </choose>
   </select>
 
   <select id="getStudentBySid" resultType="student">
@@ -73,5 +105,5 @@
                                                 where teach.tid = #{tid}
   </select>
   
-
+  
 </mapper>

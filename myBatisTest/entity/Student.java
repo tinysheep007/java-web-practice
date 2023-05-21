@@ -12,4 +12,9 @@ public class Student {
     String Name;
     String Gender;
     Teacher teacher;
+
+    // it will be printed everytime when student is made
+    public Student(){
+        System.out.println("i am constructed");
+    }
 }

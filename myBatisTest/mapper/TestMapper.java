@@ -8,6 +8,7 @@ import myBatisTest.entity.Teacher;
 public interface TestMapper {
     List<Student> selectStudent();
     List<Student> selectStudentByTeacher(int tid);
+    List<Student> selectStudentWithDynamicSQL(int sid);
     Student getStudentBySid(int sid);
     int addStudent(Student student);
     int deleteStudentBySid(int sid);

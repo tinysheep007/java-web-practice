@@ -3,6 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+  <settings>
+    <!-- here we can set if we want to use second level cache -->
+    <setting name="cacheEnabled" value="true" />
+  </settings>
   <typeAliases>
     <!-- typeAliases scan the whole pacakge of classes of sql component
     all the class name would be lower case first letter 
